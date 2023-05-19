@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8"/>
+		<title>Perfil professora</title>
+		
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;700&display=swap" rel="stylesheet">
+		<style type="text/css" title="MeuEstilo" media="all">
+		
+		* {
+			font-family: 'Ubuntu', sans-serif;
+		}
+		
+		body {
+			background-color: rgba(187, 143, 165, 0.644); 			
+			text-align: center;			
+			margin: 25px;
+		 }
+		 
+		 .container {
+			background-color: #f1f1f1; 	
+			padding: 15px;
+			text-align: center;			
+		 }
+		 
+		 h1 {
+			color: #5e0b57;
+		 }
+		 
+		 h2 {
+			color: #5e0b57
+			 14px;
+		 }
+		 
+		 .about h1 {
+		  font-size: 17px;
+		 }
+		 
+		 .about p {
+			color: #5e0b57;
+			font-weight: 400;
+		 }
+		 
+		 .about {
+			padding: 30px;
+			margin: 30px;
+			background-color: #fff; 
+			border-radius: 0%;
+			text-align: center;
+		 }
+		
+		img.avatar {
+			width:400px;
+			border-radius: 10%;
+			filter: grayscale(1);
+			transition: 0.5s;
+		}
+		
+		img.ico {
+			width:25px;			
+			filter: grayscale(1);
+			transition: 0.5s;
+			
+		}
+		
+		img:hover {				
+			filter: grayscale(0);
+			cursor: pointer;
+			border-radius: 50%;
+			box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+		}
+		
+		.negrito {
+			font-weight: 700;
+		}
+		
+		</style>
+
+	</head>
+		
+	<body>		
+		<!--ver apps e criar avatares de professores pra colocar varios professores e ampliar essa parte de perfil, separando em professores, alunos e os cursos-->
+	<div class="container">
+		<h1> Perfil </h1>
+		<p>Sou uma profissional esteticista</p>
+			<img class="avatar" src="img.jpg" alt="Avatar">	
+		
+		<div class="about"> 
+			<h1>Sobre mim</h1>
+			<p>Sou uma professora que possui conhecimentos profissionais em limpeza de pele, hidratação, massagens, drenagem linfática, aplicação de cosméticos, bronzeamento, depilação, entre outros.</p>
+		</div>
+		
+		<div>
+			<h2>Detalhes</h2>
+			
+			<span class="negrito">Nome:</span> <p>Milena Santos</p>
+			<span class="negrito">Idade:</span> <p>30 anos</p>
+			<span class="negrito">Localização:</span> <p>Tatuapé - São Paulo</p>
+			
+			
+			<img src="ico_insta.png" class="ico"/>
+			<img src="ico_twitter.png"  class="ico"/>
+			<img src="ico_facebook.png" class="ico"/>
+			
+		</div>
+
+	</div>
+	</body>
+</html>

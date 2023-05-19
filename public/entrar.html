@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulário | Entrar</title>
+    <style>
+        body{
+            font-family: Arial, Helvetica, sans-serif;
+            background-image: linear-gradient(to right, #A91079, #2E0249);
+        }
+        .box{
+            color: rgb(255, 255, 255);
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            background-color: rgba(0, 0, 0, 0.6);
+            padding: 15px;
+            border-radius: 15px;
+            width: 20%;
+        }
+        fieldset{
+            border: 3px solid #570A57;
+        }
+        legend{
+            border: 1px solid #ffffff;
+            padding: 10px;
+            text-align: center;
+            background-color: #570A57;
+            border-radius: 8px;
+        }
+        .inputBox{
+            position: relative;
+        }
+        .inputUser{
+            background: none;
+            border: none;
+            border-bottom: 1px solid white;
+            outline: none;
+            color: white;
+            font-size: 15px;
+            width: 100%;
+            letter-spacing: 2px;
+        }
+        .labelInput{
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            pointer-events: none;
+            transition: .5s;
+        }
+        .inputUser:focus ~ .labelInput,
+        .inputUser:valid ~ .labelInput{
+            top: -20px;
+            font-size: 12px;
+            color: #570A57;
+        }
+        #data_nascimento{
+            border: none;
+            padding: 8px;
+            border-radius: 10px;
+            outline: none;
+            font-size: 15px;
+        }
+        #submit{
+            background-image: linear-gradient(to right,#A91079, #2E0249);
+            width: 100%;
+            border: none;
+            padding: 15px;
+            color: rgb(29, 26, 26);
+            font-size: 15px;
+            cursor: pointer;
+            border-radius: 10px;
+        }
+        #submit:hover{
+            background-image: linear-gradient(to right,#A91079, #2E0249);
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <form action="" onsubmit="event.preventDefault(); fazerLogin()">
+            <fieldset>
+                <legend><b>Entrar e consultar cursos</b></legend>
+                <br>
+                <div class="inputBox">
+                    <input type="text" name="nome" id="nome" class="inputUser" required>
+                    <label for="nome" class="labelInput">Nome completo</label>
+                </div>
+                <br><br>
+                <div class="inputBox">
+                    <input type="text" name="email" id="email" class="inputUser" required>
+                    <label for="email" class="labelInput">Email</label>
+                </div>
+                <br><br>
+                <div class="inputBox">
+                    <input type="number" name="senha" id="senha" class="inputUser" required>
+                    <label for="number" class="labelInput">Senha</label>
+                </div>
+               
+                <div class="inputBox">
+                <br><br>
+                <div>
+                <button id="submit"><a href="cursos.html">Entrar</a></button>
+                </div>
+            </fieldset>
+        </form>
+    </div>
+    <script>
+function fazerLogin() {
+
+    const nome = document.getElementById('nome').value;
+    const email = document.getElementById('email').value;
+    const senha = document.getElementById('senha').value;
+
+    fetch('http://localhost:3000/cadastro/')
+    .then(response => response.json())
+    .then(data => {
+        //Busca cujo o nome e idade coicidem com os valores digitados
+        //Esse p seria o parametro do find (Procurar). Função CallBack
+        const pessoa = data.find(p => p.email === email && p.senha == senha
+        && p.nome == nome);
+
+        if(pessoa) {
+            window.location.href = "cursos.html";
+        }else{
+            alert('Email e senha não encontrados no banco de dados')
+        }
+    })
+}
+</script>
+</body>
+</html>
